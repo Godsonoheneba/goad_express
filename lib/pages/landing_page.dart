@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:goad_express/pages/rideshare/rideshare_homepage.dart';
 import 'package:goad_express/utils/app_colors.dart';
 import 'package:goad_express/utils/app_texts.dart';
 import 'package:goad_express/utils/utilities.dart';
@@ -90,8 +92,8 @@ class _LandingPageState extends State<LandingPage> {
                 children: [
                   Expanded(
                     child: Row(
-                      children: const [
-                        SizedBox(
+                      children: [
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -100,12 +102,22 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.moveArounTheCity,
                             color: AppColors.lightwhite2,
                             image: "assets/images/ride.png",
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(50),
                             ),
+                            onTab: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) {
+                                    return const RideShareHomePage();
+                                  },
+                                ),
+                              );
+                            },
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -114,12 +126,13 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.getYGAYDstep,
                             color: AppColors.lightwhite2,
                             image: "assets/images/delivery.png",
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(50),
                             ),
+                            onTab: () {},
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                       ],
@@ -130,8 +143,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Expanded(
                     child: Row(
-                      children: const [
-                        SizedBox(
+                      children: [
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -140,9 +153,10 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.getYDFoodWease,
                             color: AppColors.lightwhite2,
                             image: "assets/images/food.png",
+                            onTab: () {},
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -151,21 +165,22 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.buyFOTVendors,
                             color: AppColors.lightwhite2,
                             image: "assets/images/shop.png",
+                            onTab: () {},
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(
-                          height: 10,
-                        ),
+                    height: 10,
+                  ),
                   Expanded(
                     child: Row(
-                      children: const [
-                        SizedBox(
+                      children: [
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -174,9 +189,10 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.rentORBuyYDHouse,
                             color: AppColors.lightwhite2,
                             image: "assets/images/rent.png",
+                            onTab: () {},
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -185,9 +201,10 @@ class _LandingPageState extends State<LandingPage> {
                             subTitle: AppTexts.checkOOTutorial,
                             color: AppColors.lightwhite2,
                             image: "assets/images/help.png",
+                            onTab: () {},
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                       ],

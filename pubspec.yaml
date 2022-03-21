@@ -17,7 +17,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  select_form_field: ^2.2.0
+  google_maps_flutter: ^2.1.2
 
 dev_dependencies:
   flutter_test:
