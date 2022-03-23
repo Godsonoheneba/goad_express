@@ -18,6 +18,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_maps_flutter: ^2.1.2
+  swipe_to: ^1.0.2
+  google_maps_place_picker: ^2.1.0-nullsafety.3
 
 dev_dependencies:
   flutter_test:
