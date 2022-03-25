@@ -7,7 +7,7 @@ class AppDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Divider(
-      color: AppColors.lightwhite,
+      color: AppColors.lightWhite,
       thickness: 8,
     );
   }

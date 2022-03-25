@@ -100,7 +100,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.driveHText,
                             subTitle: AppTexts.moveArounTheCity,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/ride.png",
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(50),
@@ -108,7 +108,7 @@ class _LandingPageState extends State<LandingPage> {
                             onTab: () {
                               Navigator.push(
                                 context,
-                                CupertinoPageRoute(
+                                MaterialPageRoute(
                                   builder: (context) {
                                     return const RideShareHomePage();
                                   },
@@ -124,7 +124,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.deliveryHText,
                             subTitle: AppTexts.getYGAYDstep,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/delivery.png",
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(50),
@@ -151,7 +151,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.foodHText,
                             subTitle: AppTexts.getYDFoodWease,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/food.png",
                             onTab: () {},
                           ),
@@ -163,7 +163,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.shopHText,
                             subTitle: AppTexts.buyFOTVendors,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/shop.png",
                             onTab: () {},
                           ),
@@ -187,7 +187,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.getAHseHText,
                             subTitle: AppTexts.rentORBuyYDHouse,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/rent.png",
                             onTab: () {},
                           ),
@@ -199,7 +199,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: LandingPageCard(
                             title: AppTexts.helpHText,
                             subTitle: AppTexts.checkOOTutorial,
-                            color: AppColors.lightwhite2,
+                            color: AppColors.lightWhite2,
                             image: "assets/images/help.png",
                             onTab: () {},
                           ),

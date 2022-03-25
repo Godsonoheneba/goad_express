@@ -76,7 +76,7 @@ class AppDrawer extends StatelessWidget {
                     height: 50,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.lightwhite,
+                      color: AppColors.lightWhite,
                     ),
                     child: const Icon(
                       Icons.person,
