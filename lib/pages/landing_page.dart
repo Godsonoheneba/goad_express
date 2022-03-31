@@ -6,8 +6,8 @@ import 'package:goad_express/pages/rideshare/rideshare_homepage.dart';
 import 'package:goad_express/utils/app_colors.dart';
 import 'package:goad_express/utils/app_texts.dart';
 import 'package:goad_express/utils/utilities.dart';
-import 'package:goad_express/widgets/landing_page_card.dart';
-import 'package:goad_express/widgets/landing_page_drawer.dart';
+import 'package:goad_express/widgets/cards/landing_page_card.dart';
+import 'package:goad_express/widgets/navigations/landing_page_drawer.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);

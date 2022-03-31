@@ -1,9 +1,12 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:goad_express/pages/rideshare/chat_rider.dart';
+import 'package:goad_express/pages/rideshare/ride_history.dart';
+import 'package:goad_express/pages/rideshare/ride_promo.dart';
 import 'package:goad_express/utils/app_colors.dart';
 import 'package:goad_express/utils/constants.dart';
-import 'package:goad_express/widgets/select_drive.dart';
+import 'package:goad_express/widgets/cards/select_drive.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 
@@ -25,6 +28,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
   bool _isConfirmDrive = false;
   bool _isBookConfirmByDriver = false;
   bool _isDrivingToDestinstion = false;
+  bool isChatting = false;
   PickResult? _toLocationResult;
 
   @override
@@ -243,14 +247,25 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                         image: "promo.png",
                         title: "Promo",
                         onTap: () {
-                          print("object2");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RidePromo(),
+                            ),
+                          );
                         },
                       ),
                       NavBtn(
                         image: "history.png",
                         title: "History",
                         onTap: () {
-                          print("object3");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RideHistory(),
+                            ),
+                          );
+                          ;
                         },
                       ),
                     ],
@@ -875,6 +890,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                             },
                             itemCount: 2),
                       ),
+                     
                       // Container(
                       //   child: const Divider(
                       //     thickness: 1,
@@ -1511,19 +1527,29 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                               ),
                               Column(
                                 children: [
-                                  Container(
-                                    width: 55,
-                                    height: 55,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.whiteF1,
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                      vertical: 11,
-                                    ),
-                                    child: const Icon(
-                                      Icons.chat_bubble,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ChatRiderPage(),
+                                        ),
+                                      );
+                                    },
+                                    child: Container(
+                                      width: 55,
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.whiteF1,
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                        vertical: 11,
+                                      ),
+                                      child: const Icon(
+                                        Icons.chat_bubble,
+                                      ),
                                     ),
                                   ),
                                   const Text(

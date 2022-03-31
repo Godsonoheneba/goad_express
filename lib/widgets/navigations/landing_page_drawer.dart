@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goad_express/utils/app_colors.dart';
 import 'package:goad_express/utils/app_texts.dart';
-import 'package:goad_express/widgets/divider.dart';
+import 'package:goad_express/widgets/divider/divider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class AppDrawer extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          const AppDivider(),
+          const AppDivider8(),
           _drawerItems(
             icon: Icons.logout_outlined,
             text: AppTexts.logout,
