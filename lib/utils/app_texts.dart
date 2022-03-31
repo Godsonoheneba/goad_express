@@ -28,7 +28,8 @@ class AppTexts {
   static const String logout = 'Logout';
 
   static const String enterPromo = 'Enter promo code';
-  static const String enterPromoDesc = 'Enter the code and it will be applied to your next ride';
+  static const String enterPromoDesc =
+      'Enter the code and it will be applied to your next ride';
   static const String apply = 'Apply';
   static const String tripHistory = 'Trip history';
   static const String tripWith = 'Trip with ';
@@ -36,4 +37,8 @@ class AppTexts {
   static const String fare = 'Fare ';
   static const String cash = 'Cash ';
   static const String tripCancel = 'Trip Cancel ';
+  static const String enterYourDestination = 'Enter Your Destination ';
+  static const String tellUsWhereYouWantToGo = 'Tell us where you want to go ';
+  static const String selectYourPreferDrive = 'Select your prefered drive ';
+  static const String fellFreeToExploreWHatYouWant = 'Fell free to explore what you want ';
 }

@@ -5,7 +5,9 @@ import 'package:goad_express/pages/rideshare/chat_rider.dart';
 import 'package:goad_express/pages/rideshare/ride_history.dart';
 import 'package:goad_express/pages/rideshare/ride_promo.dart';
 import 'package:goad_express/utils/app_colors.dart';
+import 'package:goad_express/utils/app_texts.dart';
 import 'package:goad_express/utils/constants.dart';
+import 'package:goad_express/widgets/cards/description_card.dart';
 import 'package:goad_express/widgets/cards/select_drive.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
@@ -240,7 +242,12 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                         image: "home.png",
                         title: "Home",
                         onTap: () {
-                          print("object1");
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const RideShareHomePage(),
+                          //   ),
+                          // );
                         },
                       ),
                       NavBtn(
@@ -283,58 +290,10 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 20,
-                    ),
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.myBlue,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 0,
-                          blurRadius: 20,
-                          color: AppColors.black.withOpacity(0.25),
-                          offset: const Offset(0.0, 0.0),
-                        )
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: const [
-                            Text(
-                              "Enter your destination",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 17,
-                                color: AppColors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 7,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              "Tell us whenever you to go.",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 14,
-                                color: AppColors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  const DescriptionCard(
+                      title: AppTexts.enterYourDestination,
+                      subTitle: AppTexts.tellUsWhereYouWantToGo,
+                      backColor: AppColors.primaryColor),
                   const SizedBox(
                     height: 20,
                   ),
@@ -540,57 +499,10 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 20,
-                    ),
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 0,
-                          blurRadius: 20,
-                          color: AppColors.black.withOpacity(0.25),
-                          offset: const Offset(0.0, 0.0),
-                        )
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: const [
-                            Text(
-                              "Select your prefered drive",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 17,
-                                color: AppColors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 7,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              "Fell free to explore what you want",
-                              style: TextStyle(
-                                fontFamily: "Roboto",
-                                fontSize: 14,
-                                color: AppColors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                  const DescriptionCard(
+                    title: AppTexts.selectYourPreferDrive,
+                    subTitle: AppTexts.fellFreeToExploreWHatYouWant,
+                    backColor: AppColors.primaryColor,
                   ),
                   const SizedBox(
                     height: 20,
@@ -890,7 +802,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                             },
                             itemCount: 2),
                       ),
-                     
+
                       // Container(
                       //   child: const Divider(
                       //     thickness: 1,
