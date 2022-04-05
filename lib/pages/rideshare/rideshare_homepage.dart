@@ -1,6 +1,7 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:goad_express/pages/rideshare/change_trip.dart';
 import 'package:goad_express/pages/rideshare/chat_rider.dart';
 import 'package:goad_express/pages/rideshare/ride_history.dart';
 import 'package:goad_express/pages/rideshare/ride_promo.dart';
@@ -189,7 +190,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                               "Where to",
                               style: TextStyle(
                                 fontFamily: "Roboto",
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: AppColors.primaryColor,
                               ),
                             ),
@@ -564,7 +565,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 550,
+                  height: 460,
                   decoration: BoxDecoration(
                     color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(20),
@@ -581,7 +582,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                     children: [
                       Container(
                         width: double.infinity,
-                        height: 260,
+                        height: 220,
                         decoration: BoxDecoration(
                           color: AppColors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -607,7 +608,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                   Text(
                                     "GoadX",
                                     style: TextStyle(
-                                      fontSize: 25,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.primaryColor,
                                     ),
@@ -618,17 +619,17 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                   Text(
                                     "Driveless car",
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       color: AppColors.grey1,
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 20,
+                                    height: 15,
                                   ),
                                   Text(
                                     "4",
                                     style: TextStyle(
-                                      fontSize: 25,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.primaryColor,
                                     ),
@@ -639,17 +640,17 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                   Text(
                                     "Seats",
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       color: AppColors.grey1,
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 20,
+                                    height: 15,
                                   ),
                                   Text(
                                     "5.0",
                                     style: TextStyle(
-                                      fontSize: 25,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.primaryColor,
                                     ),
@@ -660,7 +661,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                   Text(
                                     "Car rating",
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       color: AppColors.grey1,
                                     ),
                                   ),
@@ -905,29 +906,30 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                AvatarGlow(
-                  animate: true,
-                  curve: Curves.fastOutSlowIn,
-                  glowColor: AppColors.primaryColor,
-                  endRadius: 150.0,
-                  duration: const Duration(milliseconds: 2000),
-                  repeat: true,
-                  showTwoGlows: true,
-                  repeatPauseDuration: const Duration(milliseconds: 20),
-                  child: Material(
-                    // Replace this child with your own
-                    elevation: 8.0,
-                    shape: const CircleBorder(),
-                    child: CircleAvatar(
-                      backgroundColor: AppColors.white,
-                      child: Image.asset(
-                        'assets/icons/searchingcar.png',
-                        height: 40,
-                      ),
-                      radius: 30.0,
-                    ),
-                  ),
-                ),
+                // AvatarGlow(
+                //   animate: true,
+                //   curve: Curves.fastOutSlowIn,
+                //   glowColor: AppColors.primaryColor,
+                //   endRadius: 150.0,
+                //   duration: const Duration(milliseconds: 2000),
+                //   repeat: true,
+                //   showTwoGlows: true,
+                //   repeatPauseDuration: const Duration(milliseconds: 20),
+                //   child: Material(
+                //     // Replace this child with your own
+                //     elevation: 8.0,
+                //     shape: const CircleBorder(),
+                //     child: CircleAvatar(
+                //       backgroundColor: AppColors.white,
+                //       child: Image.asset(
+                //         'assets/icons/searchingcar.png',
+                //         height: 40,
+                //       ),
+                //       radius: 30.0,
+                //     ),
+                //   ),
+                // ),
+
                 Container(
                   width: double.infinity,
                   height: 320,
@@ -959,7 +961,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                               child: const Text(
                                 "Booking confirmed",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -971,7 +973,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                             child: const Text(
                               "We have accepted your booking, Finding you a driver",
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -1020,12 +1022,18 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              setState(() {
-                                _isConfirmDrive = false;
-                                _isConfirm = false;
-                                _isSelectDrive = false;
-                                _toLocationResult = null;
-                              });
+                              // setState(() {
+                              //   _isConfirmDrive = false;
+                              //   _isConfirm = false;
+                              //   _isSelectDrive = false;
+                              //   _toLocationResult = null;
+                              // });
+
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ChangeTrip(),
+                                  ));
                             },
                             child: Row(
                               children: [
@@ -1898,6 +1906,8 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
       ),
     );
   }
+
+
 }
 
 class NavBtn extends StatelessWidget {

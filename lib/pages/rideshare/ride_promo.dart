@@ -1,3 +1,4 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:goad_express/utils/app_colors.dart';
@@ -74,21 +75,59 @@ class _RidePromoState extends State<RidePromo> {
             ),
           ),
           const Spacer(),
-          Container(
-            margin: const EdgeInsets.all(20),
-            // padding: EdgeInsets.symmetric(horizontal: 20),
-            width: double.infinity,
-            height: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: AppColors.primaryColor,
-            ),
-            child: const Center(
-              child: Text(
-                AppTexts.apply,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: AppColors.white,
+          InkWell(
+            onTap: () {
+              if (promoCodeController.text.isNotEmpty) {
+                if (promoCodeController.text == '123456') {
+                  CoolAlert.show(
+                    context: context,
+                    type: CoolAlertType.success,
+                    text: AppTexts.successForCode,
+                    barrierDismissible: false,
+                    backgroundColor: AppColors.primaryColor,
+                    animType: CoolAlertAnimType.slideInDown,
+                  );
+
+                  setState(() {
+                    promoCodeController.text = '';
+                  });
+                } else {
+                  CoolAlert.show(
+                    context: context,
+                    type: CoolAlertType.error,
+                    text: AppTexts.invalidCode,
+                    barrierDismissible: false,
+                    backgroundColor: AppColors.primaryColor,
+                    animType: CoolAlertAnimType.slideInUp,
+                  );
+                }
+              } else {
+                CoolAlert.show(
+                  context: context,
+                  type: CoolAlertType.error,
+                  text: AppTexts.allFieldMustBeFill,
+                  barrierDismissible: false,
+                  backgroundColor: AppColors.primaryColor,
+                  animType: CoolAlertAnimType.slideInUp,
+                );
+              }
+            },
+            child: Container(
+              margin: const EdgeInsets.all(20),
+              // padding: EdgeInsets.symmetric(horizontal: 20),
+              width: double.infinity,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: AppColors.primaryColor,
+              ),
+              child: const Center(
+                child: Text(
+                  AppTexts.apply,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: AppColors.white,
+                  ),
                 ),
               ),
             ),

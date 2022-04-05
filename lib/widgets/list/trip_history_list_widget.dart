@@ -48,7 +48,8 @@ class TripHistoryList extends StatelessWidget {
                   location,
                   style: const TextStyle(
                     overflow: TextOverflow.ellipsis,
-                    fontSize: 18,
+                    fontSize: 14,
+                    color: AppColors.primaryColor,
                   ),
                 ),
               ),
@@ -56,7 +57,7 @@ class TripHistoryList extends StatelessWidget {
                 "GHC $amount",
                 style: const TextStyle(
                   overflow: TextOverflow.ellipsis,
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -75,6 +76,7 @@ class TripHistoryList extends StatelessWidget {
                     style: const TextStyle(
                       // overflow: TextOverflow.ellipsis,
                       fontSize: 12,
+                      color: AppColors.grey1,
                     ),
                   ),
                 ),
@@ -94,8 +96,6 @@ class TripHistoryList extends StatelessWidget {
           const AppDivider1(),
         ],
       ),
-   
-   
     );
   }
 }

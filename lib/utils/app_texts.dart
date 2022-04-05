@@ -40,5 +40,18 @@ class AppTexts {
   static const String enterYourDestination = 'Enter Your Destination ';
   static const String tellUsWhereYouWantToGo = 'Tell us where you want to go ';
   static const String selectYourPreferDrive = 'Select your prefered drive ';
-  static const String fellFreeToExploreWHatYouWant = 'Fell free to explore what you want ';
+  static const String fellFreeToExploreWHatYouWant =
+      'Fell free to explore what you want ';
+
+  static const String changeYourDestination = 'Change Your Destination ';
+  static const String tellUsWhereToChangeYouWantToGo =
+      'Tell us where you want to change thr trip to ';
+
+  static const String allFieldMustBeFill = '  All fields are mandatory ';
+  static const String successForCode = '  Successfully added Promo Code ';
+  static const String invalidCode = ' Invalid Code ';
+  static const String confirm = ' Confirm ';
+  static const String areYouToConfirm =
+      ' Are you sure you want to change your location? ';
+  static const String fieldCannotBeEmpty = ' Field cannot be empty!! ';
 }

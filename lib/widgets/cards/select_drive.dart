@@ -64,7 +64,7 @@ class SelectDrive extends StatelessWidget {
                       Text(
                         title,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: AppColors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -108,7 +108,7 @@ class SelectDrive extends StatelessWidget {
                     child: Text(
                       time,
                       style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         color: AppColors.white,
                       ),
                       textAlign: TextAlign.start,
@@ -117,7 +117,7 @@ class SelectDrive extends StatelessWidget {
                   Text(
                     amount,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: AppColors.white,
                       fontWeight: FontWeight.bold,
                     ),

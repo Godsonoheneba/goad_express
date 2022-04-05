@@ -40,6 +40,8 @@ class _RideHistoryState extends State<RideHistory> {
                 ),
               ),
             ),
+
+          
             TripHistoryList(
               location: 'Love to the nations church',
               amount: '70',

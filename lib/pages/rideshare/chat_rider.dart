@@ -56,6 +56,7 @@ class _ChatRiderPageState extends State<ChatRiderPage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Text("data"),
               Container(
                 height: 100,
                 width: double.infinity,

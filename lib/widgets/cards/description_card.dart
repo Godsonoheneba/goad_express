@@ -42,7 +42,7 @@ class DescriptionCard extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontFamily: "Roboto",
-                  fontSize: 17,
+                  fontSize: 16,
                   color: AppColors.white,
                 ),
               ),
@@ -57,7 +57,7 @@ class DescriptionCard extends StatelessWidget {
                 subTitle,
                 style: const TextStyle(
                   fontFamily: "Roboto",
-                  fontSize: 14,
+                  fontSize: 12,
                   color: AppColors.white,
                 ),
               ),
