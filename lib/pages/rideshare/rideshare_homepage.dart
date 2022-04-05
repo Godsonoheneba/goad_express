@@ -1022,55 +1022,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              // setState(() {
-                              //   _isConfirmDrive = false;
-                              //   _isConfirm = false;
-                              //   _isSelectDrive = false;
-                              //   _toLocationResult = null;
-                              // });
-
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => ChangeTrip(),
-                              //   ),
-                              // );
-
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PlacePicker(
-                                    selectInitialPosition: true,
-                                    searchForInitialValue: true,
-                                    apiKey:
-                                        "AIzaSyBZg8hk6vdVHvrBq7aB42rNJpHMNZHluv4",
-                                    onPlacePicked: (result) {
-                                      setState(() {
-                                        _toLocationResult = result;
-                                      });
-                                      print(result.formattedAddress);
-                                      // Navigator.of(context).pop();
-
-                                      CoolAlert.show(
-                                        context: context,
-                                        backgroundColor: AppColors.lightWhite2,
-                                        type: CoolAlertType.confirm,
-                                        confirmBtnText: "Confirm",
-                                        cancelBtnText: "Bcak",
-                                        confirmBtnColor: AppColors.primaryColor,
-                                        text: AppTexts.areYouToConfirm,
-                                        onConfirmBtnTap: () {
-                                          print("object");
-                                          Navigator.of(context).pop();
-                                        },
-                                      );
-                                    },
-                                    initialPosition: const LatLng(
-                                        37.42796133580664, -122.085749655962),
-                                    useCurrentLocation: true,
-                                  ),
-                                ),
-                              );
+                              changeTrip();
                             },
                             child: Row(
                               children: [
@@ -1283,12 +1235,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              setState(() {
-                                _isConfirmDrive = false;
-                                _isConfirm = false;
-                                _isSelectDrive = false;
-                                _toLocationResult = null;
-                              });
+                              changeTrip();
                             },
                             child: Row(
                               children: [
@@ -1403,7 +1350,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                 child: const Text(
                                   "Hyundai i10",
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 16,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -1430,7 +1377,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                 child: const Text(
                                   "GN 7209 - 21",
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
                                   overflow: TextOverflow.ellipsis,
@@ -1534,11 +1481,11 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                       vertical: 11,
                                     ),
                                     child: const Icon(
-                                      Icons.turned_in_not,
+                                      Icons.call,
                                     ),
                                   ),
                                   const Text(
-                                    "Safety",
+                                    "Call",
                                     style: TextStyle(
                                       fontSize: 14,
                                     ),
@@ -1555,13 +1502,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              setState(() {
-                                _isConfirmDrive = false;
-                                _isConfirm = false;
-                                _isSelectDrive = false;
-                                _isLookingForCar = false;
-                                _toLocationResult = null;
-                              });
+                              changeTrip();
                             },
                             child: Row(
                               children: [
@@ -1728,7 +1669,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                 child: const Text(
                                   "Hyundai i10",
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 16,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -1795,10 +1736,13 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                         width: 30,
                                       ),
                                     ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
                                     const Text(
                                       "Nana Addo",
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   ],
@@ -1824,16 +1768,19 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                       Icons.insert_invitation_outlined,
                                     ),
                                   ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   const Text(
-                                    "Invite friends",
+                                    "Share my location",
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ],
                               ),
                               const SizedBox(
-                                width: 60,
+                                width: 40,
                               ),
                               Column(
                                 children: [
@@ -1849,13 +1796,16 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                       vertical: 11,
                                     ),
                                     child: const Icon(
-                                      Icons.turned_in_not,
+                                      Icons.call,
                                     ),
                                   ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   const Text(
-                                    "Safety",
+                                    "Call",
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ],
@@ -1870,13 +1820,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              setState(() {
-                                _isConfirmDrive = false;
-                                _isConfirm = false;
-                                _isSelectDrive = false;
-                                _isLookingForCar = false;
-                                _toLocationResult = null;
-                              });
+                              changeTrip();
                             },
                             child: Row(
                               children: [
@@ -1940,6 +1884,40 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void changeTrip() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (ctx) => PlacePicker(
+          selectInitialPosition: true,
+          searchForInitialValue: true,
+          apiKey: "AIzaSyBZg8hk6vdVHvrBq7aB42rNJpHMNZHluv4",
+          onPlacePicked: (result) {
+            Navigator.of(ctx).pop();
+
+            CoolAlert.show(
+              context: context,
+              backgroundColor: AppColors.lightWhite2,
+              type: CoolAlertType.confirm,
+              confirmBtnText: "Confirm",
+              cancelBtnText: "Bcak",
+              confirmBtnColor: AppColors.primaryColor,
+              text: AppTexts.areYouToConfirm,
+              onConfirmBtnTap: () {
+                Navigator.pop(context);
+                setState(() {
+                  _toLocationResult = result;
+                });
+              },
+            );
+          },
+          initialPosition: const LatLng(37.42796133580664, -122.085749655962),
+          useCurrentLocation: true,
+        ),
       ),
     );
   }

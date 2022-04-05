@@ -27,9 +27,9 @@ class _ChatRiderPageState extends State<ChatRiderPage> {
               height: 8,
             ),
             const Text(
-              "Kia Picanto - GN - 8787-21",
+              "Nana Addo",
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 12,
               ),
             ),
           ],
