@@ -190,7 +190,7 @@ class _ChangeTripState extends State<ChangeTrip> {
                 ),
                 AppButton(
                   title: AppTexts.confirm,
-                  onTap: () {
+                  onTap: () async {
                     if (_toLocationResult != null) {
                       CoolAlert.show(
                         context: context,
@@ -200,7 +200,10 @@ class _ChangeTripState extends State<ChangeTrip> {
                         cancelBtnText: "Bcak",
                         confirmBtnColor: AppColors.primaryColor,
                         text: AppTexts.areYouToConfirm,
-                        // confirmBtnTap: Navigator.pop(context),
+                        onConfirmBtnTap: () {
+                          print("object");
+                          Navigator.of(context).pop();
+                        },
                       );
                     } else {
                       CoolAlert.show(

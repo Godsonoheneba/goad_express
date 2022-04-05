@@ -1029,11 +1029,48 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                               //   _toLocationResult = null;
                               // });
 
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => ChangeTrip(),
+                              //   ),
+                              // );
+
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ChangeTrip(),
-                                  ));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PlacePicker(
+                                    selectInitialPosition: true,
+                                    searchForInitialValue: true,
+                                    apiKey:
+                                        "AIzaSyBZg8hk6vdVHvrBq7aB42rNJpHMNZHluv4",
+                                    onPlacePicked: (result) {
+                                      setState(() {
+                                        _toLocationResult = result;
+                                      });
+                                      print(result.formattedAddress);
+                                      // Navigator.of(context).pop();
+
+                                      CoolAlert.show(
+                                        context: context,
+                                        backgroundColor: AppColors.lightWhite2,
+                                        type: CoolAlertType.confirm,
+                                        confirmBtnText: "Confirm",
+                                        cancelBtnText: "Bcak",
+                                        confirmBtnColor: AppColors.primaryColor,
+                                        text: AppTexts.areYouToConfirm,
+                                        onConfirmBtnTap: () {
+                                          print("object");
+                                          Navigator.of(context).pop();
+                                        },
+                                      );
+                                    },
+                                    initialPosition: const LatLng(
+                                        37.42796133580664, -122.085749655962),
+                                    useCurrentLocation: true,
+                                  ),
+                                ),
+                              );
                             },
                             child: Row(
                               children: [
@@ -1906,8 +1943,6 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
       ),
     );
   }
-
-
 }
 
 class NavBtn extends StatelessWidget {
