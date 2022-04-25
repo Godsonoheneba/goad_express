@@ -1,7 +1,6 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
-import 'package:goad_express/pages/rideshare/change_trip.dart';
 import 'package:goad_express/pages/rideshare/chat_rider.dart';
 import 'package:goad_express/pages/rideshare/ride_history.dart';
 import 'package:goad_express/pages/rideshare/ride_promo.dart';
@@ -983,16 +982,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                           ),
                           InkWell(
                             onTap: () {
-                              CoolAlert.show(
-                                context: context,
-                                backgroundColor: AppColors.lightWhite2,
-                                type: CoolAlertType.confirm,
-                                confirmBtnText: "Confirm",
-                                cancelBtnText: "Bcak",
-                                confirmBtnColor: AppColors.primaryColor,
-                                text:
-                                    "You might have to wait longer if you cancel",
-                              );
+                              cancelTrip();
                             },
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -1192,16 +1182,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                               Expanded(
                                 child: GestureDetector(
                                   onTap: () {
-                                    CoolAlert.show(
-                                      context: context,
-                                      backgroundColor: AppColors.lightWhite2,
-                                      type: CoolAlertType.confirm,
-                                      confirmBtnText: "Confirm",
-                                      cancelBtnText: "Bcak",
-                                      confirmBtnColor: AppColors.primaryColor,
-                                      text:
-                                          "You might have to wait longer if you cancel",
-                                    );
+                                    cancelTrip();
                                   },
                                   child: Container(
                                     child: Column(
@@ -1567,14 +1548,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const RideShareHomePage();
-                              },
-                            ),
-                          );
+                          cancelTrip();
                         },
                         child: Row(
                           children: [
@@ -1686,7 +1660,7 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
                                       blurRadius: 20,
                                       color: AppColors.black.withOpacity(0.25),
                                       offset: const Offset(0.0, 0.0),
-                                    )
+                                    ),
                                   ],
                                 ),
                                 padding: const EdgeInsets.symmetric(
@@ -1919,6 +1893,24 @@ class _RideShareHomePageState extends State<RideShareHomePage> {
           useCurrentLocation: true,
         ),
       ),
+    );
+  }
+
+  void cancelTrip() {
+    Navigator.pop(context);
+    setState(
+      () {
+        _isChooseLocation = false;
+        _isConfirm = false;
+        _isSelectDrive = false;
+        _isLookingForCar = false;
+        _isConfirmDrive = false;
+        _isBookConfirmByDriver = false;
+        _isDrivingToDestinstion = false;
+        isChatting = false;
+        _fromLocationResult = null;
+        _toLocationResult = null;
+      },
     );
   }
 }

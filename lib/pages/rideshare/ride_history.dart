@@ -22,98 +22,39 @@ class _RideHistoryState extends State<RideHistory> {
         foregroundColor: AppColors.primaryColor,
         shadowColor: AppColors.white,
         elevation: 1,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: const EdgeInsets.all(25),
-              child: const Text(
-                AppTexts.tripHistory,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-
-          
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '70',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ViewTripHistory(),
-                  ),
-                );
-              },
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '00',
-              date: '27 Mar, 22:42',
-              cancel: 'Trip Cancelled',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ViewCanceledTrip(),
-                  ),
-                );
-              },
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-            TripHistoryList(
-              location: 'Love to the nations church',
-              amount: '100',
-              date: '27 Mar, 22:42',
-              cancel: '',
-              onTap: () {},
-            ),
-          ],
+        title: const Text(
+          AppTexts.tripHistory,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+          ),
         ),
+      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TripHistoryList(
+                  location: 'Love to the nations church',
+                  amount: '70',
+                  date: '27 Mar, 22:42',
+                  cancel: '',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ViewTripHistory(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
